@@ -19,7 +19,8 @@ app.use(bodyParser.urlencoded({
 }))
 
 consign({ locale })
-  .include('app/Routes.js')
+  .include('bootstrap/database.js')
+  .then('app/Routes.js')
   .into(app)
 
 module.exports = app
