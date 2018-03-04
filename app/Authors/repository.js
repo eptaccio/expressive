@@ -1,12 +1,7 @@
-const authors = [
-  {
-    id: 1,
-    name: 'George R. R. Martin'
-  }
-]
+const Author = require('./model')
 
-const find = () => Promise.resolve(authors)
-const findOne = id => Promise.resolve(authors.find(author => author.id === parseInt(id)))
+const find = () => Author.find()
+const findOne = id => Author.find({ _id: id })
 
 module.exports = {
   find,
